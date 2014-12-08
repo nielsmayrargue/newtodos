@@ -1,6 +1,12 @@
 <!--the data context of this template is set on the route controller level-->
 <template name="TodosDetail">
+  {{#contentFor region="breadcrumbs"}}
+    <li class="active">
+      {{description}}
+    </li>
+  {{/contentFor}}
   <h3>
     Your todo content: {{description}}
   </h3>
+  <a href="/">back</a>
 </template>

@@ -4,9 +4,19 @@
 
   {{> loginButtons}}
   <div class="row">
+    <ol class="breadcrumb">
+      <li>
+        <a href="{{pathFor 'todos.index'}}">Home</a>
+        <span class="divider">/</span>
+      </li>
+      {{> yield region="breadcrumbs"}}
+
+    </ol>
+  </div>
+  <div class="row">
     <h1>Crazy Todolist</h1>
   </div>
-  {{> yield}}
+  {{> yield}} <!--main yield-->
 </div>
 
 </template>
