@@ -10,4 +10,21 @@ Meteor.methods({
   *  }
   *
   */
+  'insertNewItem': function(itemDescription){
+    var currentUserId = Meteor.userId();
+    TodoList.insert({
+    description: itemDescription,
+    createdBy: currentUserId,
+    isDone: false
+    });
+  },
+
+  'changeStatus': function(itemId){
+    if (TodoList.find(itemId).fetch()[0].isDone == true) {
+      TodoList.update(itemId, {$set: {isDone: false}});
+    }
+    else {
+      TodoList.update(itemId, {$set: {isDone: true}});
+    }
+  }
 });

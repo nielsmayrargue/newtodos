@@ -1,3 +1,19 @@
 <template name="TodosIndex">
-  client/views/todos/todos_index/todos_index.html
+  <div class="row">
+    {{>CreateTodoItem}}
+  </div>
+  <div>
+    <ul>
+    {{#each items}}
+      <li class="{{doneClass}}">
+        {{>TodoItem}}
+      </li>
+    {{else}}
+      <p>No items sorry !</p>
+    {{/each}}
+    </ul>
+  </div>
+  <div>
+    {{>TodosCount}}
+  </div>
 </template>

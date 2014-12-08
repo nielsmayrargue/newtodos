@@ -1,0 +1,10 @@
+<template name="CreateTodoItem">
+  <form>
+    {{#if currentUser}}
+      <input type="text" name="itemDescription">
+      <input type="submit" value="Add item">
+    {{else}}
+      <input type="text" readonly placeholder="sign in to create new todos">
+    {{/if}}
+  </form>
+</template>

@@ -2,21 +2,28 @@
 /* TodosIndex: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
 Template.TodosIndex.events({
-  /*
-   * Example:
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
+  'click .changeStatus': function(){
+    itemId = this._id;
+    Meteor.call('changeStatus', itemId);
+  }
 });
 
 Template.TodosIndex.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+  'items': function() {
+    return Todos.find({});
+  },
+  'doneClass': function() {
+    var item = Todos.find(this._id).fetch();
+    if(item[0].isDone == true) {
+      return "doneClass"
+    }
+  },
+  'checked': function() {
+    var item = Todos.find(this._id).fetch();
+    if(item[0].isDone == true) {
+      return "checked"
+    }
+  }
 });
 
 /*****************************************************************************/
