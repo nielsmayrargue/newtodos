@@ -1,14 +1,16 @@
 /*****************************************************************************/
-/* TodoItem: Event Handlers and Helpersss .js*/
+/* TodosDetail: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
-Template.TodoItem.events({
-  'click .changeStatus': function(){
-    itemId = this._id;
-    Meteor.call('changeStatus', itemId);
-  }
+Template.TodosDetail.events({
+  /*
+   * Example:
+   *  'click .selector': function (e, tmpl) {
+   *
+   *  }
+   */
 });
 
-Template.TodoItem.helpers({
+Template.TodosDetail.helpers({
   /*
    * Example:
    *  items: function () {
@@ -18,13 +20,13 @@ Template.TodoItem.helpers({
 });
 
 /*****************************************************************************/
-/* TodoItem: Lifecycle Hooks */
+/* TodosDetail: Lifecycle Hooks */
 /*****************************************************************************/
-Template.TodoItem.created = function () {
+Template.TodosDetail.created = function () {
 };
 
-Template.TodoItem.rendered = function () {
+Template.TodosDetail.rendered = function () {
 };
 
-Template.TodoItem.destroyed = function () {
+Template.TodosDetail.destroyed = function () {
 };

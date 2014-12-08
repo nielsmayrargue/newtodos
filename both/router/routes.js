@@ -12,3 +12,4 @@ Router.configure({
  *  Router.route('/', {name: 'home'});
 */
 Router.route('/', {name: 'todos.index'});
+Router.route('/todos/:_id', {name: 'todos.detail'});

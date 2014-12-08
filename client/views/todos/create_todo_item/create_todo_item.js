@@ -8,6 +8,12 @@ Template.CreateTodoItem.events({
    *
    *  }
    */
+   'submit form': function(){
+    event.preventDefault();
+    var itemDescription = event.target.itemDescription.value;
+    Meteor.call('insertNewItem', itemDescription);
+    event.target.reset();
+  }
 });
 
 Template.CreateTodoItem.helpers({

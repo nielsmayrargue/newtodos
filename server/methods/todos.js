@@ -12,7 +12,7 @@ Meteor.methods({
   */
   'insertNewItem': function(itemDescription){
     var currentUserId = Meteor.userId();
-    TodoList.insert({
+    Todos.insert({
     description: itemDescription,
     createdBy: currentUserId,
     isDone: false
@@ -20,11 +20,11 @@ Meteor.methods({
   },
 
   'changeStatus': function(itemId){
-    if (TodoList.find(itemId).fetch()[0].isDone == true) {
-      TodoList.update(itemId, {$set: {isDone: false}});
+    if (Todos.find(itemId).fetch()[0].isDone == true) {
+      Todos.update(itemId, {$set: {isDone: false}});
     }
     else {
-      TodoList.update(itemId, {$set: {isDone: true}});
+      Todos.update(itemId, {$set: {isDone: true}});
     }
   }
 });

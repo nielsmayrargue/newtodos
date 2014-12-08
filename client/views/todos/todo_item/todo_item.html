@@ -1,4 +1,7 @@
 <template name="TodoItem">
   <input type="checkbox" class="changeStatus" {{checked}}>
   {{description}}
+  <div class="action">
+    <a href="{{pathFor 'todos.detail' params=this}}">Details</a>
+  </div>
 </template>

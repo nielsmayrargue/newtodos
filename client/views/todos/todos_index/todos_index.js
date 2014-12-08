@@ -2,10 +2,7 @@
 /* TodosIndex: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
 Template.TodosIndex.events({
-  'click .changeStatus': function(){
-    itemId = this._id;
-    Meteor.call('changeStatus', itemId);
-  }
+
 });
 
 Template.TodosIndex.helpers({
